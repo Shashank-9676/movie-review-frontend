@@ -21,7 +21,7 @@ function Signup() {
         })
         const data = await response.json()
         if(response.ok){
-            Navigate('/login')
+            navigate('/login')
             setEmail('')
             setName('')
             setError('')
@@ -36,31 +36,100 @@ function Signup() {
     }
     return (
 
-    <div className="main-container">
-            <form className='form-container' onSubmit={handleSignup}>
-                <div className='input-cont'>
-                    <label htmlFor="username" >Username *</label>
-                    <input type="text" id='username' value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter Username" required />
-                </div>
-                <div className='input-cont'>
-                    <label htmlFor="name" >Name *</label>
-                    <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter Your Name" required />
-                </div>
-                <div className='input-cont'>
-                    <label htmlFor="email" >Email *</label>
-                    <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" required />
-                </div>
-                <div className='input-cont'>
-                    <label htmlFor="password">Password *</label>
-                    <input type="password" id='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Password' required />
-                </div>
-                <div>
-                    <p className='error-msg'>{error}</p>
-                <button type="submit" className='login-button'>Signup</button>
-                <p>Already have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Login</span></p>
-                </div>
-            </form>
-      </div>
+<div className="flex items-center justify-center px-4 h-screen w-screen">
+  <form
+    className="p-8 rounded-2xl shadow-lg w-full max-w-md bg-white"
+    onSubmit={handleSignup}
+  >
+    <h2 className="text-2xl font-bold text-center mb-6">Create an Account</h2>
+    {/* Username */}
+    <div className="mb-4">
+      <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
+        Username *
+      </label>
+      <input
+        type="text"
+        id="username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Enter Username"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+
+    {/* Name */}
+    <div className="mb-4">
+      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+        Name *
+      </label>
+      <input
+        type="text"
+        id="name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter Your Name"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+
+    {/* Email */}
+    <div className="mb-4">
+      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+        Email *
+      </label>
+      <input
+        type="email"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter Email"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+
+    {/* Password */}
+    <div className="mb-4">
+      <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+        Password *
+      </label>
+      <input
+        type="password"
+        id="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Enter Password"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+
+    {/* Error Message */}
+    {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+
+    {/* Submit Button */}
+    <button
+      type="submit"
+      className="w-full bg-blue-500 text-white py-2 rounded-lg font-medium hover:bg-blue-600 transition"
+    >
+      Signup
+    </button>
+
+    {/* Footer */}
+    <p className="mt-4 text-sm text-center text-gray-600">
+      Already have an account?{" "}
+      <span
+        className="text-blue-500 font-medium cursor-pointer hover:underline"
+        onClick={() => navigate("/login")}
+      >
+        Login
+      </span>
+    </p>
+  </form>
+</div>
+
     
   )
 }

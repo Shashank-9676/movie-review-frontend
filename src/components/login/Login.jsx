@@ -32,23 +32,61 @@ function Login() {
         return <Navigate to="/" replace />;
     }
     return (
-      <div className="main-container">
-            <form className='form-container' onSubmit={handleLogin}>
-                <div className='input-cont'>
-                    <label htmlFor="username" >Username *</label>
-                    <input type="text" value={username} id='username'placeholder="Enter Username"onChange={(e) => setUsername(e.target.value)} required/>
-                </div>
-                <div className='input-cont'>
-                    <label htmlFor="password">Password *</label>
-                    <input type="password" value={password} id='password' placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} required/>
-                </div>
-                <div>
-                    <p className='error-msg'>{error}</p>
-                    <button type="submit" className='login-button'>Login</button>
-                    <p>Don't have an account? <a href="/signup">Signup</a></p>
-                </div>
-            </form>
-      </div>
+      <div className="h-screen w-screen flex items-center justify-center">
+        
+  <form
+    className="flex flex-col bg-white items-center justify-center rounded-xl px-5 py-10 shadow-md shadow-black/20"
+    onSubmit={handleLogin}
+  >
+    <div className="flex flex-col pb-2.5 w-full px-6">
+        <h1 className='font-bold text-center text-3xl text-gray-800 pb-3'>Login</h1>
+      <label htmlFor="username" className="text-base font-medium">
+        Username *
+      </label>
+      <input
+        type="text"
+        value={username}
+        id="username"
+        placeholder="Enter Username"
+        onChange={(e) => setUsername(e.target.value)}
+        required
+        className="mt-2 p-2 border-2 border-gray-300 rounded-md bg-transparent outline-none text-base"
+      />
+    </div>
+
+    <div className="flex flex-col pb-2.5 w-full px-6">
+      <label htmlFor="password" className="text-base font-medium">
+        Password *
+      </label>
+      <input
+        type="password"
+        value={password}
+        id="password"
+        placeholder="Enter Password"
+        onChange={(e) => setPassword(e.target.value)}
+        required
+        className="mt-2 p-2 border-2 border-gray-300 rounded-md bg-transparent outline-none text-base"
+      />
+    </div>
+
+    <div className="w-full px-6">
+      <p className="text-red-500 text-base">{error}</p>
+      <button onClick={handleLogin}
+        type="submit"
+        className="w-full py-2 px-4 rounded-md bg-indigo-500 text-white text-base cursor-pointer mt-2"
+      >
+        Login
+      </button>
+      <p className="mt-2 text-center text-sm">
+        Don’t have an account?{" "}
+        <span onClick={() => navigate("/signup")} className="text-indigo-600 hover:underline cursor-pointer">
+          Signup
+        </span>
+      </p>
+    </div>
+  </form>
+</div>
+
   )
 }
 export default Login
