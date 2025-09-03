@@ -1,0 +1,53 @@
+.main-container{
+    /* background-image: url("https://res.cloudinary.com/dnhc09agd/image/upload/v1756552621/photorealistic-hummingbird-outdoors-nature_gfwdal.jpg"); */
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-cont{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+label{
+    color: rgb(3, 46, 39);
+    font-size: medium;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70%;
+    width: 40%;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input{
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    /* color: rgb(3, 46, 39); */
+    font-size: medium;
+    background-color: transparent;
+    outline: none;
+}
+.login-button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #646cff;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+    width: 100%;
+}
+.error-msg{
+    color: red;
+    font-size: medium;
+}
