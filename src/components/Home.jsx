@@ -99,7 +99,7 @@ function Home() {
       />
       </div>
   ) : (
-    <div className="flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 justify-center w-150 items-center h-[50vh] mx-auto rounded-2xl shadow-lg shadow-black/20">
+    <div className="flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 justify-center w-[70%] items-center h-[50vh] mx-auto rounded-2xl shadow-lg shadow-black/20">
       <img className='h-[60%]' src="https://res.cloudinary.com/dnhc09agd/image/upload/v1757000273/f55f03ca-7dec-4e00-938e-5e5259402d2f_xyewri.png" alt="Empty View" />
     </div>
   )}
