@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './Header'
 import MovieCard from './MovieCard'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 function Home() {
     const [search, setSearch] = useState('')
     const [error, setError] = useState('')
@@ -30,14 +31,16 @@ function Home() {
         setError('')
     }
 
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white ">
-  <Header />
+    <>  
+    <div className="min-h-screen text-white bg-[url('https://res.cloudinary.com/dnhc09agd/image/upload/e_background_removal/e_dropshadow:azimuth_220;elevation_60;spread_20/b_rgb:333B4C/f_png,e_improve,e_sharpen/v1757000852/image-vintage-film-strip-word-260nw-385203082_d0z3gc.webp')] bg-fixed bg-cover">
+        <Header />
 
   {/* Search Bar */}
-  <div className="flex items-center justify-center mt-6 px-4">
+  <div className="flex items-center justify-center mt-6 px-4 ">
     <input
-      className="text-white w-full max-w-md p-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700"
+      className="text-white w-full max-w-md p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700"
       type="search"
       name="search"
       placeholder="Search movies (min 3 chars)"
@@ -51,20 +54,24 @@ function Home() {
     />
     <button
       onClick={searchMovies}
-      className="bg-blue-500 h-12 text-white m-2 px-5 py-2 rounded-lg hover:bg-blue-600"
+      className="bg-blue-500 h-10 text-white m-2 px-5 py-2 rounded-lg hover:bg-blue-600"
     >
       Search
     </button>
   </div>
-
+  
   {/* Error message */}
   <p className="text-red-500 mt-2 text-center">{error}</p>
-
+  {loading && <div className="flex justify-center items-center"><DotLottieReact
+      src="https://lottie.host/4824a7f8-5196-445f-94bd-b0db54471d6a/V0HkJ56JpA.lottie"
+      loop
+      autoplay
+    /></div>}
   {/* Results */}
   {results.length > 0 ? (
     <div className="flex flex-col items-center">
       <div className="mt-4 flex flex-wrap justify-center gap-4">
-        {loading && <p className="text-center">Loading...</p>}
+        {loading && <div className="loader"></div>}
         {results.map((movie) => (
           <MovieCard key={movie.imdbID} movie={movie} />
         ))}
@@ -92,14 +99,12 @@ function Home() {
       />
       </div>
   ) : (
-    // Empty state before searching
-    <div className="flex flex-col justify-center items-center h-[60vh] w-full ">
-      <img className='h-[60%] rounded-[50%]' src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSghGZ_sl5xM4hX_dZ9okfdxfxhELjAgE1gue7ieN71SdTl8D9w" alt="" />
-      <p className="text-white-500 pt-7 text-lg font-semibold">Search for a movie</p>
+    <div className="flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 justify-center w-150 items-center h-[50vh] mx-auto rounded-2xl shadow-lg shadow-black/20">
+      <img className='h-[60%]' src="https://res.cloudinary.com/dnhc09agd/image/upload/v1757000273/f55f03ca-7dec-4e00-938e-5e5259402d2f_xyewri.png" alt="Empty View" />
     </div>
   )}
 </div>
-
+    </>
     )
 }
 

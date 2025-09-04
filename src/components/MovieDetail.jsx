@@ -1,9 +1,8 @@
-
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { useParams } from "react-router";
 import Cookies from "js-cookie";
-import ClipLoader from "react-spinners/ClipLoader";
 import Header from "./Header";
 export default function MovieDetail() {
   const { id } = useParams();
@@ -45,7 +44,7 @@ export default function MovieDetail() {
         setLoading(false);
       }
     };
-    if (token) fetchMovie();
+    fetchMovie();
   }
   useEffect(func, [id, token]);
 
@@ -75,17 +74,26 @@ export default function MovieDetail() {
     }
   };
   
-  if (error) return <p className="text-center mt-10 text-red-600">{error}</p>;
-  if (!data) return null; 
-  const { movieDetails, reviews } = data;
-
-  return (
-    <>
+if (error) return <p className="text-center mt-10 text-red-600">{error}</p>;
+if (loading) return (
+  <>
     <Header />
-    {loading ? <div className="flex justify-center items-center h-screen"><ClipLoader color="#36d7b7" /></div> :
-      <div className="p-4 w-screen pr-2 max-w-screen mx-auto">
+    <DotLottieReact
+      src="https://lottie.host/4824a7f8-5196-445f-94bd-b0db54471d6a/V0HkJ56JpA.lottie"
+      loop
+      autoplay
+    />
+  </>
+);
+if (!data) return null; 
+const { movieDetails, reviews } = data;
+
+return (
+  <>
+  <Header />
+    <div className="pl-4 max-w-screen">
         {/* Movie Details */}
-        <div className="bg-gray-900 text-white rounded-2xl shadow-lg border border-gray-800 p-6 flex gap-6">
+        <div className="bg-gray-900 text-white rounded-2xl shadow-lg border border-gray-800 p-6 flex md:flex-row flex-col gap-6">
           <img
           src={movieDetails.Poster}
           alt={movieDetails.Title}
@@ -214,7 +222,7 @@ export default function MovieDetail() {
           </div>
         )}
       </>
-    </div>}
+    </div>
     </>
   );
 }

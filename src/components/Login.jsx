@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Cookies from 'js-cookie';
-import './Login.css'
 import { useNavigate, Navigate } from 'react-router';
 function Login() {
     const [username, setUsername] = useState('');
@@ -32,12 +31,12 @@ function Login() {
         return <Navigate to="/" replace />;
     }
     return (
-      <div className="h-screen w-screen flex items-center justify-center">
-        
-  <form
-    className="flex flex-col bg-white items-center justify-center rounded-xl px-5 py-10 shadow-md shadow-black/20"
-    onSubmit={handleLogin}
-  >
+      <div className="h-screen w-screen flex items-center justify-center bg-[url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg')] bg-fixed bg-cover">
+        <form
+          className="flex flex-col bg-white items-center justify-center rounded-xl p-5 pb-10  shadow-md min-w-[30%] shadow-black/20"
+          onSubmit={handleLogin}
+        >
+    <img className='w-32 h-32 mb-4 rounded-[50%]' src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSghGZ_sl5xM4hX_dZ9okfdxfxhELjAgE1gue7ieN71SdTl8D9w" alt="logo" />
     <div className="flex flex-col pb-2.5 w-full px-6">
         <h1 className='font-bold text-center text-3xl text-gray-800 pb-3'>Login</h1>
       <label htmlFor="username" className="text-base font-medium">
@@ -71,18 +70,8 @@ function Login() {
 
     <div className="w-full px-6">
       <p className="text-red-500 text-base">{error}</p>
-      <button onClick={handleLogin}
-        type="submit"
-        className="w-full py-2 px-4 rounded-md bg-indigo-500 text-white text-base cursor-pointer mt-2"
-      >
-        Login
-      </button>
-      <p className="mt-2 text-center text-sm">
-        Don’t have an account?{" "}
-        <span onClick={() => navigate("/signup")} className="text-indigo-600 hover:underline cursor-pointer">
-          Signup
-        </span>
-      </p>
+      <button type="submit" className="w-full py-2 px-4 rounded-md bg-indigo-500 text-white text-base cursor-pointer mt-2">Login</button>
+      <p className="mt-2 text-center text-sm">Don't have an account? <span onClick={() => navigate("/signup")} className="text-indigo-600 hover:underline cursor-pointer"> Signup</span></p>
     </div>
   </form>
 </div>

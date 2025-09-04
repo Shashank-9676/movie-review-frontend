@@ -1,4 +1,4 @@
-import Login from './components/login/Login'
+import Login from './components/Login'
 import Signup from './components/signup'
 import Home from './components/Home'
 import MovieDetail from './components/MovieDetail'

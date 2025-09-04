@@ -8,7 +8,8 @@ function MovieCard({ movie }) {
       className="flex items-center w-full max-w-md grow-1 bg-gray-800 text-white rounded-xl shadow-md hover:scale-[1.02] transition-transform"
     >
       {/* Poster */}
-      <img
+      <div className="bg-[url('https://www.shutterstock.com/image-vector/not-available-hanging-sign-banner-260nw-614123429.jpg')] bg-cover rounded-l-xl">
+        <img
         className="w-20 h-28 md:w-36 md:h-48 object-cover rounded-l-xl"
         src={
           movie.Poster === "N/A"
@@ -17,6 +18,8 @@ function MovieCard({ movie }) {
         }
         alt={movie.Title}
       />
+      </div>
+      
 
       {/* Info */}
       <div className="flex flex-col justify-center px-4 py-2">

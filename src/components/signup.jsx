@@ -36,7 +36,7 @@ function Signup() {
     }
     return (
 
-<div className="flex items-center justify-center px-4 h-screen w-screen">
+<div className="flex items-center justify-center px-4 h-screen w-screen bg-[url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg')] bg-fixed bg-cover">
   <form
     className="p-8 rounded-2xl shadow-lg w-full max-w-md bg-white"
     onSubmit={handleSignup}
