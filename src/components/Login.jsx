@@ -32,40 +32,17 @@ function Login() {
     }
     return (
       <div className="h-screen w-screen flex items-center justify-center bg-[url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg')] bg-fixed bg-cover">
-        <form
-          className="flex flex-col bg-white items-center justify-center rounded-xl p-5 pb-10  shadow-md min-w-[30%] shadow-black/20"
-          onSubmit={handleLogin}
-        >
+        <form className="flex flex-col bg-white items-center justify-center rounded-xl p-5 pb-10  shadow-md min-w-[30%] shadow-black/20" onSubmit={handleLogin}>
     <img className='w-32 h-32 mb-4 rounded-[50%]' src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSghGZ_sl5xM4hX_dZ9okfdxfxhELjAgE1gue7ieN71SdTl8D9w" alt="logo" />
     <div className="flex flex-col pb-2.5 w-full px-6">
         <h1 className='font-bold text-center text-3xl text-gray-800 pb-3'>Login</h1>
-      <label htmlFor="username" className="text-base font-medium">
-        Username *
-      </label>
-      <input
-        type="text"
-        value={username}
-        id="username"
-        placeholder="Enter Username"
-        onChange={(e) => setUsername(e.target.value)}
-        required
-        className="mt-2 p-2 border-2 border-gray-300 rounded-md bg-transparent outline-none text-base"
-      />
+      <label htmlFor="username" className="text-base font-medium">Username *</label>
+      <input type="text" value={username} id="username" placeholder="Enter Username" onChange={(e) => setUsername(e.target.value)} required className="mt-2 p-2 border-2 border-gray-300 rounded-md bg-transparent outline-none text-base" />
     </div>
 
     <div className="flex flex-col pb-2.5 w-full px-6">
-      <label htmlFor="password" className="text-base font-medium">
-        Password *
-      </label>
-      <input
-        type="password"
-        value={password}
-        id="password"
-        placeholder="Enter Password"
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        className="mt-2 p-2 border-2 border-gray-300 rounded-md bg-transparent outline-none text-base"
-      />
+      <label htmlFor="password" className="text-base font-medium">Password *</label>
+      <input type="password" value={password} id="password" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} required className="mt-2 p-2 border-2 border-gray-300 rounded-md bg-transparent outline-none text-base" />
     </div>
 
     <div className="w-full px-6">

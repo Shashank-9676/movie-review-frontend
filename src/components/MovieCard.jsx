@@ -9,19 +9,9 @@ function MovieCard({ movie }) {
     >
       {/* Poster */}
       <div className="bg-[url('https://www.shutterstock.com/image-vector/not-available-hanging-sign-banner-260nw-614123429.jpg')] bg-cover rounded-l-xl">
-        <img
-        className="w-20 h-28 md:w-36 md:h-48 object-cover rounded-l-xl"
-        src={
-          movie.Poster === "N/A"
-            ? "https://www.shutterstock.com/image-vector/not-available-hanging-sign-banner-260nw-614123429.jpg"
-            : movie.Poster
-        }
-        alt={movie.Title}
-      />
+        <img className="w-20 h-28 md:w-36 md:h-48 object-cover rounded-l-xl" src={ movie.Poster === "N/A" ? "https://www.shutterstock.com/image-vector/not-available-hanging-sign-banner-260nw-614123429.jpg" : movie.Poster} alt={movie.Title}/>
       </div>
-      
 
-      {/* Info */}
       <div className="flex flex-col justify-center px-4 py-2">
         <h2 className="font-semibold text-lg">{movie.Title}</h2>
         <p className="text-sm text-gray-400">{movie.Year}</p>

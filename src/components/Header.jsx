@@ -9,8 +9,8 @@ function Header() {
     }
 
   return (
-        <div className='w-screen bg-[#252b36] flex justify-between items-center mt-3 shadow-xl'>
-        <img onClick={() => navigate('/')} className='h-24 cursor-pointer' src="https://res.cloudinary.com/dnhc09agd/image/upload/b_rgb:333B4C/v1757001681/unnamed_m3j4pi.png" alt="logo" />
+        <div className='w-screen bg-[#252b36] flex justify-between items-center px-3 shadow-xl'>
+        <img onClick={() => navigate('/')} className='h-24 cursor-pointer p-2 mx-2' src="https://res.cloudinary.com/dnhc09agd/image/upload/v1757500993/bcc28474-b5bb-47b0-968c-f487dc94953d_cegkjh.png" alt="logo" />
         <button onClick={logOut} className='bg-blue-500 text-white p-3 rounded-lg px-5 mx-6 cursor-pointer'>Logout</button>
     </div>
 
