@@ -4,6 +4,10 @@ import Home from './components/Home'
 import MovieDetail from './components/MovieDetail'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import ProtectedRoute from './components/ProtectedRoute'
+import NotFound from './components/NotFound'
+import About from './components/About'
+import './App.css'
+
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +16,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/movies/:id" element={<ProtectedRoute><MovieDetail /></ProtectedRoute>} />
+        <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
